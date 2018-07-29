@@ -3,6 +3,8 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $db = "stitch_me";
+
+session_start();
 // Create connection
 $con = mysqli_connect($servername, $username, $password,$db);
 

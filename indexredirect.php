@@ -1,16 +1,14 @@
-
 <?php
-include_once("dbconnect.php");
 
-$title = "checkLogin";
 include_once("dbconnect.php");
 
 if(isset($_SESSION['email']))
 {
-    header("location:index.html");
+    header("location:select-design.php");
 }
 else
 {
     header("location:login.html");
 }
+
 ?>

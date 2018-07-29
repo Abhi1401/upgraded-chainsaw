@@ -1,3 +1,7 @@
+<?php
+    include_once 'dbconnect.php';
+    include_once 'checkLogin.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,8 +21,18 @@
         <div class="hero-body">
           <div class="container">
             <div style="display: flex;">
-              <h2 class="subtitle" style="font-weight: bold;size: 58px;flex:4">stichIt.com</h2><h2 style=" float: left;margin-top: 50px"><?php if(isset($_POST['email']) echo $_POST['u_name'])?>&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-              <i class="fa fa-user-circle" style="font-size:50px;position: absolute; right: 0;margin-right: 10px"></i></div>
+              <h2 class="subtitle" style="font-weight: bold;size: 58px;flex:4">stichIt.com</h2><h2 style=" float: left;margin-top: 50px">
+              <a href="profile.php"><i class="fa fa-user-circle" style="font-size:50px;position: absolute; right: 0;margin-right: 10px">
+              </i><br/><br/>
+              <?php
+                        if(isset($_SESSION['email']))
+                  {
+                        echo $_SESSION['name'];
+                  }
+                
+                ?>
+                </div>
+                </a>
             <h1 class="title" style="font-size:80px">
               Login
             </h1>

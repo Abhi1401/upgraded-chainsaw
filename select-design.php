@@ -62,21 +62,18 @@
             <div class="card-content"style='height:290px'>
         <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['IMG'] ).'" style="width: 370px"/>'; ?>
                 <p class="subtitle">
-                    <?php
-                        echo $row['NAME'];
-                    ?>
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item" >
-                    <span id='btn'>
-                        Edit this design
-                    </span>
+                <a><span id='btn'>
+                      Edit
+      </span></a>
                 </p>
                 <a href="selected-design.php?id=<?php echo $row['ID']?>">
                     <p class="card-footer-item">
                         <span>
-                            Go with this design
+                          Select
                         </span>
                     </p>
                 </a>
@@ -96,52 +93,56 @@
             </header>
             <section class="modal-card-body">
               <!-- Content ... -->
-
-              Neck Type
-              <div class="field">
-                  <div class="control">
-                    <div class="select is-danger">
-                      <select>
-                        <option>Classic collar</option>
-                        <option>Wide spread collar</option>
-                        <option>Buttoned Down collar</option>
-                        <option>Chinease collar</option>
+<form method="post" action="user-details.php">
+  Neck Type
+  <div class="field">
+    <div class="control">
+      <div class="select is-danger">
+        <select id="neck">
+          <?php
+                      $neck_type=array("Classic Collar", "Wide Spread Collar","Buttoned down Collar","Chinese Collar");
+                      foreach($neck_type as $type)
+                      {
+                        echo "<option>".$type."</option>";
+                      }
+                      ?>
                       </select>
                     </div>
                   </div>
                 </div>
                 Sleeve Type
                 <div class="field">
-                    <div class="control">
-                      <div class="select is-danger">
-                        <select>
-                          <option>Short sleeves</option>
-                          <option>3/4 sleeve</option>
-                          <option>Long Sleeve</option>
-                          
-                        </select>
-                      </div>
+                  <div class="control">
+                    <div class="select is-danger">
+                      <select id="sleeve">
+                        <option>Short sleeves</option>
+                        <option>3/4 sleeve</option>
+                        <option>Long Sleeve</option>
+                        
+                      </select>
                     </div>
                   </div>
-Other Remarks:
-                  <textarea class="textarea" placeholder="enter your remarks.." rows='10'></textarea>
-
-            </section>
-            <footer class="modal-card-foot">
-              <button class="button is-success">Save changes</button>
-              <button class="button">Cancel</button>
-            </footer>
+                </div>
+                Other Remarks:
+                <textarea id="remarks" class="textarea" placeholder="enter your remarks.." rows='4'></textarea>
+                
+              </section>
+              <footer class="modal-card-foot">
+                <button type="submit" class="button is-success">Save changes</button>
+                <button type="cancel" class="button">Cancel</button>
+              </footer>
+            </div>
           </div>
+          
+          
+    </form>
+          
+          
         </div>
-
-
-        
-        
       </div>
-    </div>
-  </section>
-
-  <script>
+    </section>
+    
+    <script>
     // Get the modal
     var modal = document.getElementById('modal');
     console.log(modal)

@@ -87,7 +87,7 @@
       }
 ?>
 
-        <div id="modal" style="display: none">
+        <div class="modal" id="modal" style="display:none">
           <div class="modal-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
@@ -97,10 +97,7 @@
             <section class="modal-card-body">
               <!-- Content ... -->
 
-              neck
-              sleeves
-
-              length
+              Neck Type
               <div class="field">
                   <div class="control">
                     <div class="select is-danger">
@@ -113,6 +110,7 @@
                     </div>
                   </div>
                 </div>
+                Sleeve Type
                 <div class="field">
                     <div class="control">
                       <div class="select is-danger">
@@ -125,8 +123,8 @@
                       </div>
                     </div>
                   </div>
-
-                  <textarea class="textarea" placeholder="e.g. Hello world" rows='10'></textarea>
+Other Remarks:
+                  <textarea class="textarea" placeholder="enter your remarks.." rows='10'></textarea>
 
             </section>
             <footer class="modal-card-foot">

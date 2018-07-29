@@ -20,7 +20,7 @@
         <div class="hero-body">
           <div class="container">
             <div style="display: flex;">
-              <h2 class="subtitle" style="font-weight: bold;size: 58px;flex:4">stichIt.com</h2><h2 style=" float: left;margin-top: 50px">
+              <h2 class="subtitle" style="font-weight: bold;size: 58px;flex:4"><a href="index.html">stichIt.com</a></h2><h2 style=" float: left;margin-top: 50px">
               <a href="profile.php">
                   <?php
 

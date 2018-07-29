@@ -1,3 +1,6 @@
+<?php
+    include_once "dbconnect.php";
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,14 +39,23 @@
       <div style="display: flex;flex-wrap: wrap; justify-content: flex-start;">
       
 
-
+<?php
+  $string = "select * from tailors";
+  $query = mysqli_query($con, $string);
+  while($result =  mysqli_fetch_assoc($query))
+  {
+?>
         <div class="card" style="width: 400px;margin: 20px">
           <div class="card-content"style='height:290px'>
-            <img src="1.jpg" style="width: 370px">
             <p class="subtitle">
-              Jeff Atwood
-            </p>
-          </div>
+              <?php echo $result['NAME'];
+echo '            </p>
+            <br/>
+            <b>Rating : 
+            '.$result['RATING'];
+            ?>
+        </b>
+      </div>
           <footer class="card-footer">
             <p class="card-footer-item" id='btn'>
               <span >
@@ -52,14 +64,16 @@
             </p>
             <p class="card-footer-item">
               <span>
-                Go with this tailor
+                <a href="checkout.php?user_id=<?php echo $_GET['user_id']."&tailor_id=".$result['ID'];?>">Go with this Tailor</a>
               </span>
             </p>
           </footer>
         </div>
-
-
-        <div id="modal">
+<?php
+  }
+  ?>
+  
+        <div id="modal" class="modal">
           <div class="modal-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
